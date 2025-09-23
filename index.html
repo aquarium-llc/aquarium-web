@@ -48,7 +48,25 @@
       </header>
 
       <div class="text-section">
-        <p><strong>aquarium llc</strong><br />
+<img
+  id="fish"
+  src=""
+  width="512"
+  height="512"
+  alt="Fish"
+  class="app-logo"
+/>
+
+<script>
+  // Pick randomly between two options
+  const images = ["images/fish-happy.jpg", "images/fish-morose.jpg"];
+  const chosen = images[Math.floor(Math.random() * images.length)];
+
+  // Apply to the img tag
+  document.getElementById("fish").src = chosen;
+</script>
+
+<p><strong>aquarium llc</strong><br />
            apps and sundries</p>
         <p>
           More here soon. Possibly.
