@@ -180,6 +180,12 @@ h2 {
   background: rgba(0, 0, 0, 0.05);
 }
 
+.below-text-actions {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 24px 0;
+}
+
 .app-meta {
   display: flex;
   flex-direction: column;
