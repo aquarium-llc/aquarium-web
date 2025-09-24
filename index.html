@@ -48,6 +48,7 @@
       </header>
 
       <div class="text-section">
+<div class="fish-row">
 <img
   id="fish"
   src=""
@@ -56,14 +57,41 @@
   alt="Fish"
   class="app-logo"
 />
+<button id="refresh-fish" class="icon-button" aria-label="Randomize fish" title="Randomize">↻</button>
+</div>
 
 <script>
-  // Pick randomly between two options
-  const images = ["images/fish/fish-annoyed.jpg", "images/fish/fish-happy.jpg", "images/fish/fish-love.jpg", "images/fish/fish-mad.jpg", "images/fish/fish-scared.jpg", "images/fish/fish-surprised.jpg", "images/fish/fish-worried.jpg"];
-  const chosen = images[Math.floor(Math.random() * images.length)];
+  const images = [
+    "images/fish/fish-annoyed.jpg",
+    "images/fish/fish-happy.jpg",
+    "images/fish/fish-love.jpg",
+    "images/fish/fish-mad.jpg",
+    "images/fish/fish-scared.jpg",
+    "images/fish/fish-surprised.jpg",
+    "images/fish/fish-worried.jpg"
+  ];
 
-  // Apply to the img tag
-  document.getElementById("fish").src = chosen;
+  function randomizeFishImage() {
+    const img = document.getElementById("fish");
+    if (!img) return;
+    let next = images[Math.floor(Math.random() * images.length)];
+    if (images.length > 1) {
+      // avoid repeating the same image back-to-back when possible
+      while (next === img.getAttribute("src")) {
+        next = images[Math.floor(Math.random() * images.length)];
+      }
+    }
+    img.src = next;
+  }
+
+  // initial image
+  randomizeFishImage();
+
+  // button click handler
+  const refreshBtn = document.getElementById("refresh-fish");
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", randomizeFishImage);
+  }
 </script>
 
 <p><strong>aquarium llc</strong><br />
