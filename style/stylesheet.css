@@ -250,13 +250,13 @@ h2 {
     background-color: #343432;
   }
 
-  header h1 {
+  /* header h1 {
     background-image: url(../images/vna-dark.svg);
   }
 
   header h2 {
     background-image: url(../images/tagline-dark.svg);
-  }
+  } */
 
   a {
     color: #a4d6f7;
